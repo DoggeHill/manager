@@ -1,9 +1,9 @@
 {
-  "win32-x64-prod": {
+  "win32-x64": {
     "readme": "Second release",
     "update": "https://github.com/DoggeHill/manager/releases/download/v9.0.0",
     "install": "https://github.com/DoggeHill/manager/releases/download/v9.0.0/Timetable-Setup-8.0.0.exe",
-    "version": "9.0.2"
+    "version": "9.0.0"
   },
   "darwin-x64-prod": {
     "readme": "Second Release",
