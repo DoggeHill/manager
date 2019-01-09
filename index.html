@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Insert this line above script imports  -->
+  <script>if (typeof module === 'object') { window.module = module; module = undefined; }</script>
+
+  <!-- normal script imports etc  -->
+  <script src="js/dep/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+  <script src="js/dep/moment/moment.js"></script>
+  <script src="js/dep/semanticUI-2.2.7/semantic-2.2.7.js"></script>
+
+  <!-- Insert this line after script imports -->
+  <script>if (window.module) module = window.module;</script>
+
+
+
+
+
+  <link rel="stylesheet" href="js/dep/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="js/dep/fullCalendar.css">
+  <link rel="stylesheet" type="text/css" href="js/dep/semantic.css">
+
+  <meta charset="UTF-8">
+  <title>Manager</title>
+</head>
+
+
+
+<body>
+ <script>
+  document.addEventListener("keydown", function (e) {
+      if (e.which === 123) {
+        require("electron")
+          .remote.getCurrentWindow()
+          .toggleDevTools();
+      } else if (e.which === 116) {
+        location.reload();
+      }
+    });
+
+  
+  </script>
+ 
+  <div class="row">
+    <div class="flex">
+      <div class="left-col">
+        <div id="b1">
+          <aside class="">
+            <script>
+              $(function () {
+                $("aside").load("aside.html", function () {
+
+                  $("aside").trigger("asideLoaded");
+                });
+
+              });
+            </script>
+
+            <div id="aside"></div>
+
+          </aside>
+
+
+        </div>
+        <div id="b2">
+          <aside class="second">
+            <script>
+              $(function () {
+                $(".second").load("aside2.html", function () {
+                });
+
+              });
+            </script>
+
+            <div id="aside2"></div>
+
+          </aside>
+
+        </div>
+      </div>
+
+      <div class="right-col">
+        <header class="">
+          <script>
+            $(function () {
+              $("header").load("header.html", function () {
+                var x = $('#clients').length;
+                //         console.log(x + "header is loaded");
+                //           console.log('header');
+                $("header").trigger("headerLoaded");
+
+              });
+
+            });
+          </script>
+
+          <div id="header"></div>
+        </header>
+        <br />
+
+        <div class="ui " style="display: flex">
+          <div class="ui grid">
+            <div class="ui sixteen column">
+              <div id="calendar"></div>
+              
+
+             <script src="fullcalendar/fullcalendar.min.js"></script>
+             <script src="fullcalendar/locale-all.js"></script>
+            
+              
+              <script src='js/header.js'></script>
+              <script>require('./js/calendar.js')</script>
+              <script src='js/aside_slider.js'></script>
+              <script src='js/aside.js'></script>
+              <script src='js/aside2.js'></script>
+              <script src="js/sort.js"></script>
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

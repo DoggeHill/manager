@@ -1,0 +1,11 @@
+.container-fluid{
+    width: 67%;
+}
+#clients{
+    font-weight: bold!important;
+    text-decoration: underline;
+}
+.client_icon{
+    width: 17px !important;
+    padding-right: 5px !important;
+}

@@ -1,0 +1,24 @@
+.left-col {
+    width: 25%;
+    float: left;
+    display: flex;
+    position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	padding-right: 0;
+	padding-left: 0;
+
+}
+
+.right-col {
+    width: 75%;
+    float: right;
+}
+
+body {
+    margin: 25px!important  ;
+}
+.fc-content:hover{
+    cursor: pointer;
+}

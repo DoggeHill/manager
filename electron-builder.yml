@@ -1,0 +1,4 @@
+appId: manager
+publish:
+    provider: github
+    token: 4eefc3d401a5d925c1647bc75b1831b9fca3ea35

@@ -1,0 +1,67 @@
+<link rel="stylesheet" type="text/css" href="css/aside.css">
+
+<div class="container-own">
+  <div class="row-side">
+    <nav id="sidebar" class="bg-light sidebar">
+      <div id="aside" class="sidebar-sticky">
+        <div class="sidebar-content">
+          <div class="select">
+            <select class="b-select">
+              <option disabled selected>Zoradiť podľa</option>
+              <option data-sort="name:asc">Meno</option>
+              <option data-sort="name:dsc">Meno d</option>
+
+              <option data-sort="date:asc">Dátum začiatok</option>
+              <option data-sort="date:asc">Dátum začiatok d</option>
+
+              <option data-sort="end:asc">Dátum koniec</option>
+              <option data-sort="end:asc">Dátum koniec d</option>
+
+              <option data-sort="number:asc">Aktuálny turnus</option>
+              <option data-sort="rest:asc">Zvyšný počet turnusov</option>>
+
+
+
+
+            </select>
+          </div>
+          <ul class="nav flex-column boxes">
+            <li class="nav-item example">
+              <a class="nav-link active" href="#">
+                <div class="click_div">
+                  <img src="img/user-solid.svg">
+                  <span class="name">Meno Priezvisko</span>
+                  <span class="sr-only">(current)</span>
+                  <span class="turnusy_number">Zostávajúce turnusy</span>
+                  <span class="date_start">Začiatok</span>
+                  <span class="date_end">Koniec</span>
+                  <span class="turnusy_number_total">Počet turnusov</span>
+                </div>
+                <label class="checkbox-button">
+                  <input type="checkbox" class="checkbox-button__input" id="choice1-1" name="choice1">
+                  <span class="checkbox-button__control"></span>
+                  <span class="checkbox-button__label">VYMAZAŤ</span>
+                </label>
+
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <div class="plus go_flex">
+                  <div> <button id="add" class="add"> </button></div>
+                  <div> <button id="remove" class="remove"> </button></div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <ul id="edit" class="nav flex-column database">
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main" class=" is-open"></main>
+  </div>
+</div>
+<script src="js/contact.js"></script>
+<script>require('./js/aside.js')</script>

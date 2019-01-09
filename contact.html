@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nový klient</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/contact.css"
+      />
+  </head>
+
+  <body>
+    <script>
+      document.addEventListener("keydown", function (e) {
+        if (e.which === 123) {
+           require("electron")
+            .remote.getCurrentWindow()
+            .toggleDevTools();
+        } else if (e.which === 116) {
+          location.reload();
+        }
+      });
+    </script>
+    <main>
+
+      <div class="form-wrapper">
+        <div class="form-intro">
+          <h3 id="err"> Nový klient: </h3>
+        </div>
+
+        <form>
+          <div class="field-wrapper">
+            <div class="form-group">
+              <label for="fname">Meno</label>
+              <input type="text" id="fname" name="fname" required>
+            </div>
+
+            <div class="form-group">
+              <label for="lname">Priezvisko</label>
+              <input type="text" id="lname" name="lname" required>
+
+            </div>
+
+            <div class="form-group" id="length_of_turnus">
+              <label for="phone">Dĺžka turnusu</label>
+              <input type="number" id="length_turnus" name="length" min="0"
+                default="0" placeholder="0" required>
+            </div>
+
+            <div class="form-group" id="length_of_home">
+              <label for="phone">Dĺžka pobytu doma</label>
+              <input type="number" id="length_home" name="length_home" min="0"
+                placeholder="0" required>
+            </div>
+
+
+            <div class="form-group" id="start_of_turnus">
+              <label for="phone">Začiatok turnusu</label>
+              <input type="date" id="start-iny" name="start-iny" required>
+            </div>
+
+
+            <div class="form-group" id="end_of_turnus">
+              <label for="pword" id="change_end">Koniec turnusu</label>
+              <input type="date" id="end" name="pword">
+            </div>
+
+            <div class="own-group" id="notes">
+              <label id="block" for="phone">Poznámky</label>
+              <textarea rows="2" cols="40" id="textarea">Poznámky
+              </textarea>
+            </div>
+
+
+            <div class="own-group pt-12" id="colors">
+              <label for="pword" id="block">Farby</label>
+              <div class="color-picker">
+                <div class="opened">
+                  <div class="colors">
+
+                    <div class="circle" id="#518ff5" style="background-color:
+                      #518ff5"></div>
+                    <div class="circle" id="#673ab7" style="background-color:
+                      #673ab7"></div>
+                    <div class="circle" id="#27a768" style="background-color:
+                      #27a768"></div>
+                    <div class="circle" id="#f5bc1a" style="background-color:
+                      #f5bc1a"></div>
+                    <div class="circle" id="#de5347" style="background-color:
+                      #de5347"></div>
+                    <div class="circle" id="#88897f" style="background-color:
+                      #88897f"></div>
+                    <div class="circle" id="#309890" style="background-color:
+                      #309890"></div>
+                    <div class="circle" id="#354514" style="background-color:
+                      #354514"></div>
+                    <div class="circle" id="#591a15" style="background-color:
+                      #591a15"></div>
+                    <div class="circle" id="#0c0a0d" style="background-color:
+                      #0c0a0d"></div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="own-group" id="status">
+              <label for="pword" id="block">EU/SRO</label>
+              <select id="status">
+                <option value="volvo">EU</option>
+                <option value="saab">SRO</option>
+              </select>
+
+            </div>
+
+
+            <div class="form-group">
+              <label for="email">Počet turnusov</label>
+              <input type="number" id="number" name="number" min="0" required>
+            </div>
+
+
+            <div class="form-group additionals">
+              <div class="first"></div>
+              <div class="second"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn">Register</button>
+          </div>
+
+        </form>
+      </div>
+
+
+
+
+    </div>
+    <div class="box is-right">
+
+
+    </main>
+
+  </body>
+
+  <!-- Insert this line above script imports  -->
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  <!-- normal script imports etc  -->
+  <script src="js/dep/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+  <!-- Insert this line after script imports -->
+  <script>if (window.module) module = window.module;</script>
+
+
+  <script>require('./js/db.js')</script>
+  <script>require('./js/aside2.js')</script>
+
+
+</html>

@@ -1,0 +1,53 @@
+     <link rel="stylesheet" type="text/css" href="js/dep/semantic.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+
+    <!-- Latest compiled and minified CSS -->
+   
+    <link rel="stylesheet" type="text/css" href="js/dep/bootstrap.css">
+    <div class="container-fluid"></div>
+    <div class="ui container">
+        <div class="ui menu">
+            <a id="clients" class="active item"> <img class="client_icon" src="img/user-solid.svg"><span id="clients_text">Voľní klienti</span></a>
+            <a class="reload item">Načítať znova</a>
+            <script>
+                const ipcRenderer = require('electron').ipcRenderer;
+                // wait for an updateReady message
+                ipcRenderer.on('updateReady', function (event, text) {
+                    // changes the text of the button
+                    var container = document.getElementById('ready');
+                    container.innerHTML = "new version ready!";
+                })
+            </script>
+            Version: <span id="version">v0.1.9</span>
+            <!-- the button onClick sends a quitAndInstall message to the electron main process -->
+            <button id="ready" onClick="ipcRenderer.send('quitAndInstall')">no updates ready</button>
+            <!--
+            <a class="item">Link</a>
+            <div class="ui dropdown item">
+                Dropdown
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="item">Action</div>
+                    <div class="item">Another Action</div>
+                    <div class="item">Something else here</div>
+                    <div class="divider"></div>
+                    <div class="item">Separated Link</div>
+                    <div class="divider"></div>
+                    <div class="item">One more separated link</div>
+                </div>
+            </div>
+        -->
+            <div class="right menu">
+            <!--      <div class="item">
+                  <div class="ui action left icon input">
+                        <i class="search icon"></i>
+                        <input type="text" placeholder="Search">
+                        <button class="ui button">Submit</button>
+                    </div>
+                </div> -->
+                <a class="item back-up archive">Zálohovať archív</a>
+                <a class="item back-up normal">Zálohovať</a>
+            </div>
+        </div>
+    </div>
+

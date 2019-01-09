@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans");
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font: 400 16px/1.5 "IBM Plex Sans", sans-serif;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+    font-family: "IBM Plex Mono", monospace;
+}
+
+span {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: content;
+}
+
+aside {
+    grid-area: side;
+}
+
+textarea{
+    height: 50%;
+    width: 75%
+}
+.pt-12{
+    padding-left: 12px;
+}
+.sub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* the below image was taken froma nother codepen, which i can no longer find :(  */
+}
+
+.sub-grid .box {
+    height: 100%;
+    max-height: calc(100% - 2px);
+}
+
+.sub-grid .is-left {
+    padding: 24px;
+    background-color: #fff;
+    grid-column: 1;
+}
+
+.sub-grid .is-left.is-reverse {
+    grid-column: 1 / -1;
+}
+
+.sub-grid .is-left.is-reverse .form-wrapper {
+    max-width: 400px;
+    margin: auto;
+}
+
+.sub-grid .is-left.is-reverse .form-wrapper p, .sub-grid .is-left.is-reverse .form-wrapper span, .sub-grid .is-left.is-reverse .form-wrapper a {
+    display: none;
+}
+
+.sub-grid .is-left.is-reverse .field-wrapper .form-group {
+    display: none;
+}
+
+.sub-grid .is-left.is-reverse .field-wrapper .form-group:nth-of-type(4), .sub-grid .is-left.is-reverse .field-wrapper .form-group:nth-of-type(5) {
+    display: flex;
+    padding-left: 0;
+    width: 100%;
+}
+
+.sub-grid .is-right.is-reverse {
+    visibility: hidden;
+}
+
+.form-wrapper {
+    height: 100%;
+}
+
+.form-wrapper h3 {
+    align-self: flex-start;
+    color: #5d70ca;
+    margin-bottom: 16px;
+    text-align: left;
+    width: 100%;
+}
+
+.form-wrapper p, .form-wrapper span {
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 12px;
+}
+
+.form-wrapper a {
+    color: #5d70ca;
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    margin: 12px 0;
+    padding-bottom: 6px;
+    position: relative;
+    transition: ease-out 0.3s 0.1s;
+    width: auto;
+}
+
+.form-wrapper a::after {
+    height: 2px;
+    width: 100%;
+    background-image: linear-gradient(-225deg, #5271c4 0%, #b19fff 48%, #eca1fe 100%);
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: 0.3s;
+}
+
+.form-wrapper a:hover::after {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+form input, form button {
+    border: 0;
+    border-radius: -2px;
+    height: 36px;
+    width: 100%;
+    -webkit-border-radius: -2px;
+    -moz-border-radius: -2px;
+    -ms-border-radius: -2px;
+    -o-border-radius: -2px;
+}
+
+form label {
+    font-size: 16px;
+    color: #483a31;
+    margin-bottom: 12px;
+}
+
+form input {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+}
+
+form input:focus {
+    border-color: #5271c4;
+}
+
+form input:-webkit-autofill, form input:-webkit-autofill:hover, form input:-webkit-autofill:focus, form input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #5d70ca inset !important;
+    -webkit-text-fill-color: #fff !important;
+    box-shadow: 0 0 0px 1000px #5d70ca inset;
+}
+
+form button {
+    outline: none;
+    background-image: linear-gradient(-225deg, #5271c4 0%, #b19fff 48%, #eca1fe 100%);
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 24px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+form button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+}
+
+.field-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-flow: row wrap;
+    width: calc(50% - 12px);
+}
+.own-group{
+    width: calc(50% - 12px);
+    
+}
+
+.form-group:nth-of-type(even) {
+    padding-left: 12px;
+}
+
+.form-group:last-of-type {
+    margin-top: 12px;
+    padding-left: 0;
+    margin: auto;
+}
+
+.form-group.is-full {
+    width: 100%;
+}
+
+.form-group.is-full:nth-of-type(even) {
+    padding-left: 0;
+}
+
+@media (max-width: 400px) {
+    .sub-grid .box {
+        max-height: 95vh;
+        overflow: auto;
+    }
+    .form-group {
+        display: flex;
+        width: 100%;
+    }
+    .form-group:nth-of-type(even) {
+        padding-left: 0;
+    }
+}
+
+.additionals {
+    display: flex;
+    justify-content: space-evenly;
+}
+.first{
+    width: 50%;
+    padding-right: 15px;
+}
+.first>input {
+    display: block;
+   
+}
+.second{
+    width: 50%;
+
+}
+.second>input {
+    display: block;
+}
+#end{
+    pointer-events: none;
+}
+#block{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+.summary-info {
+    box-shadow: 0 7px 13px 0 rgba(86, 95, 102, 0.07);
+    background: #fff;
+    max-width: 270px;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  
+  .info {
+    width: calc(100% - 40px);
+  }
+  
+  p.style {
+    color: #000;
+    margin-bottom: 5px;
+  }
+  
+  p.style-value {
+    color: #595b65;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 10px;
+  }
+  
+  .circle {
+    height: 40px;
+    width: 40px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    border: 1px solid #dadada;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+  }
+  
+  .opened {
+    box-shadow: 0 7px 13px 0 rgba(86, 95, 102, 0.07);
+    background: #fff;
+    max-width: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    margin-top: 15px;
+  }
+  .color-picker{
+      padding-bottom: 15px;
+  }
+  
+  .opened:after {
+    border: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    content: '';
+    right: 10px;
+    position: absolute;
+    top: -20px;
+  }
+  
+  .colors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+ 
+  .circle {
+   /* flex: 40px; */
+    margin-right: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  
